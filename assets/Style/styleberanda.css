@@ -1,0 +1,92 @@
+<style>
+	*{
+		box-sizing: border-box;
+		margin:0; padding:0;
+		overflow: hidden;
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+	nav {
+	   	background-color: #37988e;
+	   	overflow: hidden;
+	}
+	nav a {
+	   	float: left;
+	   	color: #dadfe1;
+	   	text-align: center;
+	   	padding: 14px 16px;
+	   	text-decoration: none;
+	   	font-size: 17px;
+	}
+	nav a:hover {
+	   	background-color: #d68d9a;
+	   	color: #000;
+	}
+	nav a.active {
+	    background-color: #5333ed;
+	    color: white;
+	}
+	body {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 14px;
+		background: #ffffff;
+		color: #a5a5a5;
+	}
+	.header {
+		width: 100%;
+	    text-align: center;
+	    background: #ffffff;
+	}
+	.leftcolumn {   
+	    float: left;
+	    width: 100%;
+	}
+	.rightcolumn {
+	    float: left;
+	    width: 25%;
+	    background-color: #f1f1f1;
+	    padding-left: 20px;
+	}
+	.card {
+	    background-color: white;
+	    padding: 20px;
+	    margin-top: 1px;
+	}
+	.row:after {
+	    content: "";
+	    display: table;
+	    clear: both;
+	}
+	.footer
+	{
+	    position: fixed;
+	    left: 0;
+	    bottom: 0;
+	    width: 100%;
+	    background-color: black;
+	    color: white;
+	    text-align: center;
+	}
+	.copyright
+	{
+		font-size: 12px;
+		font-style: italic;
+		color: rgba(255,255,255,0.48);
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	@media screen and (max-width: 800px) {
+	    .leftcolumn, .rightcolumn {   
+	        width: 100%;
+	        padding: 0;
+	    }
+	}
+	@media screen and (max-width: 400px) {
+	    .nav a {
+	        float: none;
+	        width: 100%;
+	    }
+	}
+</style>
