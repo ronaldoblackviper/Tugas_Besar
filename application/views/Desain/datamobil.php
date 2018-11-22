@@ -13,7 +13,7 @@
 <body>
 <div class="super_container">
 	<div class="home">
-		<div class="background_image" style="background-image:url(<?php echo base_url('assets/Images/headerutama.jpg') ?>)"></div>
+		<div class="background_image" style="background-image:url(<?php echo base_url('assets/Images/mobil1.jpg') ?>)"></div>
 		<header class="header" id="header">
 			<div>
 				<div class="header_top">
@@ -27,28 +27,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="header_nav" id="header_nav_pin">
-					<div class="header_nav_inner">
-						<div class="header_nav_container">
-							<div class="container">
-								<div class="row">
-									<div class="col">
-										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-											<nav class="main_nav">
-												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li><a href="<?php echo site_url('Welcome/index') ?>">Beranda</a></li>
-													<li><a href="<?php echo site_url('Welcome/rentallogin') ?>">Rental Mobil</a></li>
-													<li><a href="<?php echo site_url('Welcome/about') ?>">Tentang Kami</a></li>
-													<li class="active"><a href="<?php echo site_url('Welcome/pencarian') ?>">Pencarian</a></li>
-												</ul>
-											</nav>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>	
 			</div>
 		</header>
@@ -57,7 +35,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Hasil Pencarian</div>
+							<div class="home_title">Data Mobil</div>
 						</div>
 					</div>
 				</div>
@@ -85,7 +63,7 @@
 								<?php
 
 									$no = 1;
-									foreach ($results as $baris) {
+									foreach ($listmobil as $baris) {
 										echo "<tr>";
 										echo "<td>".$no."</td>";
 										echo "<td>".$baris->Plat_Mobil."</td>";
@@ -97,6 +75,8 @@
 								?>
 								</table>
 							</div>
+							<br><a href="<?php echo site_url('Welcome/Menuadmin') ?>">Kembali</a> &emsp;
+							<a href="<?php echo site_url('Welcome/tambahdatamobil') ?>">Tambah Mobil</a> &emsp;
 						</div>
 					</div>
 				</div>

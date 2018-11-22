@@ -6,6 +6,10 @@ class Model_crud extends CI_Model{
 	{
 		$this->db->insert('booking',$data);
 	}
+	public function tambah_mobil($data)
+	{
+		$this->db->insert('mobil',$data);
+	}
 	public function regis($daftar)
 	{
 		$this->db->insert('user',$daftar);
@@ -18,6 +22,14 @@ class Model_crud extends CI_Model{
 		
 		return $this->db->get()->num_rows(); 
 	}
+	public function cek_login_admin($username, $password){
+		$this->db->select('*');
+		$this->db->from('admin');
+		$this->db->where('User_Admin', $username);
+		$this->db->where('Pass_Admin', $password);
+		
+		return $this->db->get()->num_rows(); 
+	}
 	public function cek_username($username){
 		$this->db->select('*');
 		$this->db->from('user');
@@ -25,19 +37,25 @@ class Model_crud extends CI_Model{
 		
 		return $this->db->get()->num_rows(); 
 	}
-	public function cari_mobil($Modelmobil)
-	{
-		$this->db->select('*');
-		$this->db->from('mobil');
-		$this->db->where('Nama_Mobil',$Modelmobil);
-
-		$query = $this->db->get()->num_rows();
-		return  $query;
-	}
 	function search($keyword)
     {
         $this->db->like('Nama_Mobil',$keyword);
-        $query  =   $this->db->get('mobil');
+        $query = $this->db->get('mobil');
+        return $query->result();
+    }
+    function tampilmobil()
+    {
+        $query = $this->db->get('mobil');
+        return $query->result();
+    }
+    function tampiluser()
+    {
+        $query = $this->db->get('user');
+        return $query->result();
+    }
+    function tampilbooking()
+    {
+        $query = $this->db->get('booking');
         return $query->result();
     }
 }

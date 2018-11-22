@@ -14,6 +14,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('Desain/loginadmin.html');
 	}
+	public function Menuadmin()
+	{
+		$this->load->view('Desain/Menuadmin.html');
+	}
 	public function rentallogin()
 	{
 		$this->load->view('Desain/rentalmobillogin.html');
@@ -22,6 +26,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('Desain/rentalmobil.html');
 	}
+	public function tambahdatamobil()
+	{
+		$this->load->view('Desain/admintambahmobil');
+	}
 	public function about()
 	{
 		$this->load->view('Desain/tentang.html');
@@ -29,6 +37,18 @@ class Welcome extends CI_Controller {
 	public function pencarian()
 	{
 		$this->load->view('Desain/pencarian.html');
+	}
+	public function datauser()
+	{
+		$this->load->view('Desain/datauser.php');
+	}
+	public function datamobil()
+	{
+		$this->load->view('Desain/datamobil.php');
+	}
+	public function databooking()
+	{
+		$this->load->view('Desain/databooking.php');
 	}
 	public function pencarianmobil()
 	{
@@ -70,6 +90,17 @@ class Welcome extends CI_Controller {
 			}
 		}
 	}
+	public function tambahmobil()
+	{
+		$data = array('Plat_Mobil' => $this->input->post('PlatMobil'),'Nama_Mobil' => $this->input->post('NamaMobil'),'Harga_Sewa' => $this->input->post('HargaSewa'),'Type_Mobil' => $this->input->post('TypeMobil'),'Jumlah_Orang' => $this->input->post('JumlahOrang'));
+		$proses = $this->Model_crud->tambah_mobil($data);
+		if(!$proses){
+			header('Location: tambahdatamobil');
+		}else{
+			echo "Data Gagal Disimpan";
+			echo "<br>";
+		}
+	}
 	public function regis()
 	{	
 		$nameuser = $this->input->post('NamaUser');
@@ -106,13 +137,13 @@ class Welcome extends CI_Controller {
          	  echo "<script>alert('Username atau password salah');history.go(-1)</script>";
          }
      }
-     public function loginadmin()
+    public function prosesloginadmin()
 	{
-         $username = $this->input->post('NamaUser');
-         $password = $this->input->post('KataSandi');
+         $user = $this->input->post('UserAdmin');
+         $pass = $this->input->post('PassAdmin');
          
-         if ($this->Model_crud->cek_login($username, $password)){
-              header('Location: rental');
+         if ($this->Model_crud->cek_login_admin($user, $pass)){
+              header('Location: Menuadmin');
          }else{
          	  echo "<script>alert('Username atau password salah');history.go(-1)</script>";
          }
@@ -126,10 +157,25 @@ class Welcome extends CI_Controller {
          	  echo "<script>alert('Mobil yang dicari tidak tersedia, Silahkan cari mobil yang lain');history.go(-1)</script>";
      	 }    	
      }
-     function search_keyword()
+    public function search_keyword()
     {
         $keyword = $this->input->post('keyword');
         $data['results'] = $this->Model_crud->search($keyword);
         $this->load->view('Desain/pencarianmobil',$data);
+    }
+    public function tampil_mobil()
+    {
+        $data['listmobil'] = $this->Model_crud->tampilmobil();
+        $this->load->view('Desain/datamobil',$data);
+    }
+    public function tampil_user()
+    {
+        $datauser['hasiluser'] = $this->Model_crud->tampiluser();
+        $this->load->view('Desain/datauser',$datauser);
+    }
+    public function tampil_booking()
+    {
+        $databooking['hasilbooking'] = $this->Model_crud->tampilbooking();
+        $this->load->view('Desain/databooking',$databooking);
     }
  }

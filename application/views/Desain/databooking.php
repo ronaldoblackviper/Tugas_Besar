@@ -13,7 +13,7 @@
 <body>
 <div class="super_container">
 	<div class="home">
-		<div class="background_image" style="background-image:url(<?php echo base_url('assets/Images/headerutama.jpg') ?>)"></div>
+		<div class="background_image" style="background-image:url(<?php echo base_url('assets/Images/mobil1.jpg') ?>)"></div>
 		<header class="header" id="header">
 			<div>
 				<div class="header_top">
@@ -27,28 +27,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="header_nav" id="header_nav_pin">
-					<div class="header_nav_inner">
-						<div class="header_nav_container">
-							<div class="container">
-								<div class="row">
-									<div class="col">
-										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-											<nav class="main_nav">
-												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li><a href="<?php echo site_url('Welcome/index') ?>">Beranda</a></li>
-													<li><a href="<?php echo site_url('Welcome/rentallogin') ?>">Rental Mobil</a></li>
-													<li><a href="<?php echo site_url('Welcome/about') ?>">Tentang Kami</a></li>
-													<li class="active"><a href="<?php echo site_url('Welcome/pencarian') ?>">Pencarian</a></li>
-												</ul>
-											</nav>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>	
 			</div>
 		</header>
@@ -57,7 +35,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Hasil Pencarian</div>
+							<div class="home_title">Data Booking</div>
 						</div>
 					</div>
 				</div>
@@ -76,27 +54,32 @@
 								<table border="1">
 								<tr>
 									<th>No</th>
+									<th>NIK</th>
 									<th>Plat Mobil</th>
-									<th>Nama Mobil</th>
-									<th>Harga Sewa(Rp)</th>
-									<th>Type Mobil</th>
-									<th>Jumlah Orang</th>
+									<th>Nama</th>
+									<th>Alamat</th>
+									<th>Tanggal Peminjaman</th>
+									<th>Tanggal Pengembalian</th>
+									<th>Foto Ktp</th>
 								</tr>
 								<?php
 
 									$no = 1;
-									foreach ($results as $baris) {
+									foreach ($hasilbooking as $baris) {
 										echo "<tr>";
 										echo "<td>".$no."</td>";
+										echo "<td>".$baris->NIK."</td>";
 										echo "<td>".$baris->Plat_Mobil."</td>";
-										echo "<td>".$baris->Nama_Mobil."</td>";
-										echo "<td>".$baris->Harga_Sewa."</td>";
-										echo "<td>".$baris->Type_Mobil."</td>";
-										echo "<td>".$baris->Jumlah_Orang."</td>";
+										echo "<td>".$baris->Nama."</td>";
+										echo "<td>".$baris->Alamat."</td>";
+										echo "<td>".$baris->Tanggal_Peminjaman."</td>";
+										echo "<td>".$baris->Tanggal_Pengembalian."</td>";
+										echo "<td>".$baris->Foto_KTP."</td>";
 									$no++; } 
 								?>
 								</table>
 							</div>
+							<br><a href="<?php echo site_url('Welcome/Menuadmin') ?>">Kembali</a>
 						</div>
 					</div>
 				</div>
