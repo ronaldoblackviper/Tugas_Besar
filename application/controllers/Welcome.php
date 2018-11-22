@@ -26,9 +26,9 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('Desain/pencarian.html');
 	}
-	public function pencarianmobil($data)
+	public function pencarianmobil()
 	{
-		$this->load->view('Desain/pencarianmobil',$data);
+		$this->load->view('Desain/pencarianmobil');
 	}
 	public function registrasi()
 	{
@@ -104,10 +104,9 @@ class Welcome extends CI_Controller {
      }
      public function Carimobil()
      {
-     	 $model = $this->input->post('Model_Mobil');
-     	 $data['query'] = $this->Model_crud->cari_mobil($model);     	
+     	 $model = $this->input->post('Model_Mobil');  	
      	 if($this->Model_crud->cari_mobil($model)){
-     	 	  header('pencarianmobil($data)');
+     	 	  header('Location: pencarianmobil');
      	 }else{
          	  echo "<script>alert('Mobil yang dicari tidak tersedia, Silahkan cari mobil yang lain');history.go(-1)</script>";
      	 }    	

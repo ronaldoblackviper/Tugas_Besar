@@ -86,41 +86,6 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- Make an Appointment -->
-				<div class="col-lg-4 contact_col">
-					<div class="info_form_container">
-						<div class="info_form_title">Make an Appointment</div>
-						<table border="1">
-							<tr>
-								<th>No</th>
-								<th>Plat Mobil</th>
-								<th>Nama Mobil</th>
-								<th>Harga Sewa</th>
-								<th>Type Mobil</th>
-								<th>Jumlah_Orang</th>
-								<th>Gambar Mobil</th>
-								<th colspan="2">Opsi</th>
-							</tr>
-							<?php
-
-								$no = 1;
-								foreach ($query->result() as $baris) {
-									echo "<tr>";
-									echo "<td>".$no."</td>";
-									echo "<td>".$baris->Plat_Mobil."</td>";
-									echo "<td>".$baris->Nama_Mobil."</td>";
-									echo "<td>".$baris->Harga_Sewa."</td>";
-									echo "<td>".$baris->Type_Mobil."</td>";
-									echo "<td>".$baris->Jumlah_Orang."</td>";
-									echo "<td>".$baris->Gambar_Mobil."</td>";
-									echo "</tr>";
-								$no++; 
-							} 
-							?>
-						</table> 
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
