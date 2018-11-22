@@ -25,4 +25,13 @@ class Model_crud extends CI_Model{
 		
 		return $this->db->get()->num_rows(); 
 	}
+	public function cari_mobil($Modelmobil)
+	{
+		$this->db->select('*');
+		$this->db->from('mobil');
+		$this->db->where('Nama_Mobil',$Modelmobil);
+
+		$query = $this->db->get()->num_rows();
+		return  $query;
+	}
 }

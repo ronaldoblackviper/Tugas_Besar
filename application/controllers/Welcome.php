@@ -26,20 +26,44 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('Desain/pencarian.html');
 	}
+	public function pencarianmobil($data)
+	{
+		$this->load->view('Desain/pencarianmobil',$data);
+	}
 	public function registrasi()
 	{
 		$this->load->view('Desain/registrasi.html');
 	}
 	public function simpan()
-	{
-		$data = array('NIK' => $this->input->post('NIK'),'Plat_Mobil' => $this->input->post('Plat_Mobil'),'Nama' => $this->input->post('Nama'),'Alamat' => $this->input->post('Alamat'),'Tanggal_Peminjaman' => $this->input->post('Tanggal_Peminjaman'),'Tanggal_Pengembalian' => $this->input->post('Tanggal_Pengembalian'),'Foto_Diri' => $this->input->post('Foto_KTP'));
-		$proses = $this->Model_crud->simpan($data);
-		if(!$proses){
-			header('Location: rental');
+	{	
+		$Peminjaman = $this->input->post('Tanggal_Peminjaman');
+		$Pengembalian = $this->input->post('Tanggal_Pengembalian');
+		$pecah = explode("-", $Peminjaman);
+		$tahun1 = $pecah[0];
+		$bulan1 = $pecah[1];
+		$hari1 = $pecah[2];
+		
+		$pecah1 = explode("-", $Pengembalian);
+		$tahun2 = $pecah1[0];
+		$bulan2 = $pecah1[1];
+		$hari2 = $pecah1[2];
+
+		$jd1 = GregorianToJD($bulan1, $hari1, $tahun1);
+		$jd2 = GregorianToJD($bulan2, $hari2, $tahun2);
+
+		$selisih = $jd2 -$jd1;
+		if($selisih<0){
+			echo "<script>alert('Tanggal tidak valid');history.go(-1)</script>";
 		}else{
-			echo "Data Gagal Disimpan";
-			echo "<br>";
-			echo "<a href='".base_url('Welcome/rental')."'>Kembali ke form</a>";
+			$data = array('NIK' => $this->input->post('NIK'),'Plat_Mobil' => $this->input->post('Plat_Mobil'),'Nama' => $this->input->post('Nama'),'Alamat' => $this->input->post('Alamat'),'Tanggal_Peminjaman' => $this->input->post('Tanggal_Peminjaman'),'Tanggal_Pengembalian' => $this->input->post('Tanggal_Pengembalian'),'Foto_KTP' => $this->input->post('Foto_KTP'));
+			$proses = $this->Model_crud->simpan($data);
+			if(!$proses){
+				header('Location: rental');
+			}else{
+				echo "Data Gagal Disimpan";
+				echo "<br>";
+				echo "<a href='".base_url('Welcome/rental')."'>Kembali ke form</a>";
+			}
 		}
 	}
 	public function regis()
@@ -67,7 +91,8 @@ class Welcome extends CI_Controller {
 			echo "<script>alert('Username sudah digunakan, silahkan gunakan username yang lain');history.go(-1)</script>";
     	}
 	}
-	function proseslogin(){
+	public function proseslogin()
+	{
          $username = $this->input->post('NamaUser');
          $password = $this->input->post('KataSandi');
          
@@ -76,5 +101,15 @@ class Welcome extends CI_Controller {
          }else{
          	  echo "<script>alert('Username atau password salah');history.go(-1)</script>";
          }
-     }     
-}
+     }
+     public function Carimobil()
+     {
+     	 $model = $this->input->post('Model_Mobil');
+     	 $data['query'] = $this->Model_crud->cari_mobil($model);     	
+     	 if($this->Model_crud->cari_mobil($model)){
+     	 	  header('pencarianmobil($data)');
+     	 }else{
+         	  echo "<script>alert('Mobil yang dicari tidak tersedia, Silahkan cari mobil yang lain');history.go(-1)</script>";
+     	 }    	
+     }
+ }
