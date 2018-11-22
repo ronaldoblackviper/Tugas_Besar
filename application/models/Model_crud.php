@@ -34,4 +34,10 @@ class Model_crud extends CI_Model{
 		$query = $this->db->get()->num_rows();
 		return  $query;
 	}
+	function search($keyword)
+    {
+        $this->db->like('Nama_Mobil',$keyword);
+        $query  =   $this->db->get('mobil');
+        return $query->result();
+    }
 }

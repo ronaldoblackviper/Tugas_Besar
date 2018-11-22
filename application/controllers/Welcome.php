@@ -10,6 +10,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('Desain/beranda.html');
 	}
+	public function loginadmin()
+	{
+		$this->load->view('Desain/loginadmin.html');
+	}
 	public function rentallogin()
 	{
 		$this->load->view('Desain/rentalmobillogin.html');
@@ -102,6 +106,17 @@ class Welcome extends CI_Controller {
          	  echo "<script>alert('Username atau password salah');history.go(-1)</script>";
          }
      }
+     public function loginadmin()
+	{
+         $username = $this->input->post('NamaUser');
+         $password = $this->input->post('KataSandi');
+         
+         if ($this->Model_crud->cek_login($username, $password)){
+              header('Location: rental');
+         }else{
+         	  echo "<script>alert('Username atau password salah');history.go(-1)</script>";
+         }
+     }
      public function Carimobil()
      {
      	 $model = $this->input->post('Model_Mobil');  	
@@ -111,4 +126,10 @@ class Welcome extends CI_Controller {
          	  echo "<script>alert('Mobil yang dicari tidak tersedia, Silahkan cari mobil yang lain');history.go(-1)</script>";
      	 }    	
      }
+     function search_keyword()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['results'] = $this->Model_crud->search($keyword);
+        $this->load->view('Desain/pencarianmobil',$data);
+    }
  }
