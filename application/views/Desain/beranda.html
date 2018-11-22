@@ -1,32 +1,145 @@
 <!DOCTYPE html>
-<html leng="en">
+<html lang="en">
 <head>
-	<title>Car Rental Rojo Rafih</title>
+	<title>Car Rental ROJO RAFIH</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Style/bootstrap4/bootstrap.min.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Style/styleberanda.css') ?>">
 </head>
 <body>
-	<header class="header">
-		<img width="100%" height="auto" src="<?php echo base_url('assets/Images/Header.jpg') ?>">
-	</header>
-	<nav class="nav">
- 		<a class="active" href="<?php echo site_url('Welcome/index') ?>">Beranda</a>
- 		<a href="<?php echo site_url('Welcome/rental') ?>">Rental Mobil</a>
- 		<a href="<?php echo site_url('Welcome/about') ?>">Tentang Kami</a>
-  		<a href="<?php echo site_url('Welcome/pencarian') ?>">Cari Mobil</a>			
-	</nav>
-	<div class="row">
-		<div class="leftcolumn">
-			<div class="card">
-				Jajal aja
+<div class="super_container">
+	<div class="home">
+		<div class="background_image" style="background-image:url(<?php echo base_url('assets/Images/headerutama.jpg') ?>)"></div>
+		<header class="header" id="header">
+			<div class="header_top">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+								<div class="logo">
+									<a href="<?php echo site_url('Welcome/index') ?>"><span>Car Rental</span>ROJO RAFIH</a>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header_nav" id="header_nav_pin">
+					<div class="header_nav_inner">
+						<div class="header_nav_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+											<nav class="main_nav">
+												<ul class="d-flex flex-row align-items-center justify-content-start">
+													<li class="active"><a href="<?php echo site_url('Welcome/index') ?>">Beranda</a></li>
+													<li><a href="<?php echo site_url('Welcome/rentallogin') ?>">Rental Mobil</a></li>
+													<li><a href="<?php echo site_url('Welcome/about') ?>">Tentang Kami</a></li>
+													<li><a href="<?php echo site_url('Welcome/pencarian') ?>">Pencarian</a></li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</header>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title">Rental Mobil Lampung Murah Online</div>
+							<div class="home_text">Solusi untuk rental mobil. Berpengalaman dan terpercaya</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="info">
+		<div class="container">
+			<div class="row row-eq-height">
+				<div class="col-lg-4 info_box_col">
+					<div class="info_box">
+						<div class="info_image"><img src="<?php echo base_url('assets/Images/info_1.jpg') ?>" alt=""></div>
+						<div class="info_content">
+							<div class="info_title">Toyota Avanza</div>
+							<div class="info_text">Mulai dari Rp. 300.000/hari<br/>Type : MPV<br/>6 Orang<br/></div>
+							<div class="button info_button"><a href="<?php echo site_url('Welcome/pencarian') ?>"><span>Cari Mobil</span><span>Cari Mobil</span></a></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 info_box_col">
+					<div class="info_box">
+						<div class="info_image"><img src="<?php echo base_url('assets/Images/info_2.jpg') ?>" alt=""></div>
+						<div class="info_content">
+							<div class="info_title">Toyota Innova</div>
+							<div class="info_text">Mulai dari Rp. 450.000/hari<br/>Type : MPV<br/>6 Orang<br/></div>
+							<div class="button info_button"><a href="<?php echo site_url('Welcome/pencarian') ?>"><span>Cari Mobil</span><span>Cari Mobil</span></a></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 info_box_col">
+					<div class="info_box">
+						<div class="info_image"><img src="<?php echo base_url('assets/Images/info_3.jpg') ?>" alt=""></div>
+						<div class="info_content">
+							<div class="info_title">Suzuki Apv</div>
+							<div class="info_text">Mulai dari Rp. 350.000/hari<br/>Type : MPV<br/>6 Orang<br/></div>
+							<div class="button info_button"><a href="<?php echo site_url('Welcome/pencarian') ?>"><span>Cari Mobil</span><span>Cari Mobil</span></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="services">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title">Pelayanan Kami</div>
+				</div>
+			</div>
+			<div class="row icon_boxes_row">
+				<div class="col-xl-4 col-lg-6">
+					<div class="icon_box">
+						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+							<div class="icon_box_icon"><img src="<?php echo base_url('assets/Images/icon_1.png') ?>" alt=""></div>
+							<div class="icon_box_title">Konfirmasi Instan</div>
+						</div>
+						<div class="icon_box_text">Pesanan anda terjamin dan pikiran anda jadi lebih tenang</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6">
+					<div class="icon_box">
+						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+							<div class="icon_box_icon"><img src="<?php echo base_url('assets/Images/icon_2.png') ?>" alt=""></div>
+							<div class="icon_box_title">Jaminan untuk setiap pemesanan</div>
+						</div>
+						<div class="icon_box_text">Kami memantau setiap pemesanan untuk memastikan anda mendapatkan mobil yang anda pilih</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6">
+					<div class="icon_box">
+						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
+							<div class="icon_box_icon"><img src="<?php echo base_url('assets/Images/icon_3.png') ?>" alt=""></div>
+							<div class="icon_box_title">Pikiran Tenang</div>
+						</div>
+						<div class="icon_box_text">Kami melindungi anda dari perusahaan rental mobil yang tidak baik</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<footer class="footer">
 		<div class="copyright">
-			&copy; Copyright By : Tugas Besar PABW	
-		</div>		
+			&copy; Copyright By : ROJO RAFIH
+		</div>
 	</footer>
+</div>
 </body>
 </html>

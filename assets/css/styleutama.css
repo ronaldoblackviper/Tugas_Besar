@@ -1,0 +1,77 @@
+<style>
+	.boximg{
+		background-color: grey;
+		width: 100%;
+		padding: 20px;
+		border: grey;
+	}
+	.card{
+		background-color: white;
+		padding: 20px;
+		margin-top: 20px;
+	}
+	.row:after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.header{
+		overflow: hidden;
+		text-align: center;
+	}
+	.nav{
+		background-color: #22313f;
+		overflow : hidden;
+	}
+	.nav a{
+		float: left;
+		color:  #dadfe1;
+		text-align: center;
+		padding: 30px 22px;
+		text-decoration: none;
+		font-size: 17px;
+		font-family: times new roman;
+	}
+	.nav a:hover{
+		background-color: #00e640;
+		color: white;
+	}
+	.nav a.active{
+		background-color: #5333ed;
+		color: white;
+	}
+	.nav input{
+		text-align: center;
+		padding: 30px 22px;
+		text-decoration: none;
+	}
+	.leftcolumn{
+		width: 75%;
+		float: left;
+	}
+	.rightcolumn{
+		width: 25%;
+		float: right;
+	}
+	.footer{
+		text-align: center;
+		color: white;
+		padding: 10px;
+		font-style: italic;
+		font-family: calibri;
+		background-color: black;
+		text-decoration: none;
+	}
+	@media screen and (max-width: 800px){
+		.leftcolumn, .rightcolumn{
+			width: 100%;
+			padding: 0px;
+		}
+	}
+	@media screen and (max-width: 400px){
+		.nav a{
+			float: none;
+			width: 100%;
+		}
+	}
+</style>

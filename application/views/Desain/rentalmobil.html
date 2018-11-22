@@ -1,37 +1,137 @@
 <!DOCTYPE html>
-<html leng="en">
+<html lang="en">
 <head>
-	<title>Car Rental Rojo Rafih</title>
+	<title>Car Rental ROJO RAFIH</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Style/bootstrap4/bootstrap.min.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Style/stylerental.css') ?>">
 </head>
 <body>
-	<header>
-		<img src="<?php echo base_url('assets/Images/Header.jpg') ?>">
-		<nav class="nav">
-	 		<a href="<?php echo site_url('Welcome/index') ?>">Beranda</a>
-	 		<a class="active" href="<?php echo site_url('Welcome/rental') ?>">Rental Mobil</a>
-	 		<a href="<?php echo site_url('Welcome/about') ?>">Tentang Kami</a>
-	  		<a href="<?php echo site_url('Welcome/pencarian') ?>">Cari Mobil</a>			
-		</nav>
-	</header>
-	<div class="row">
-		<div class="leftcolumn">
-			<div class="card">
-				
+<div class="super_container">
+	<div class="home">
+		<div class="background_image" style="background-image:url(<?php echo base_url('assets/Images/headerbooking.jpg') ?>)"></div>
+		<header class="header" id="header">
+			<div>
+				<div class="header_top">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+									<div class="logo">
+										<a href="<?php echo site_url('Welcome/index') ?>"><span>Car Rental</span>ROJO RAFIH</a>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header_nav" id="header_nav_pin">
+					<div class="header_nav_inner">
+						<div class="header_nav_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+											<nav class="main_nav">
+												<ul class="d-flex flex-row align-items-center justify-content-start">
+													<li><a href="<?php echo site_url('Welcome/index') ?>">Beranda</a></li>
+													<li class="active"><a href="<?php echo site_url('Welcome/rental') ?>">Rental Mobil</a></li>
+													<li><a href="<?php echo site_url('Welcome/about') ?>">Tentang Kami</a></li>
+													<li><a href="<?php echo site_url('Welcome/pencarian') ?>">Pencarian</a></li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
 			</div>
-		</div>
-		<div class="rightcolumn">
-			<div class="card">
-				
+		</header>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title">Data Diri</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="footer">
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 contact_col">
+					<div class="contact_form">
+						<div class="contact_info_title"></div>
+							<div class="contact_form_container">
+								<form action="<?php echo site_url('Welcome/simpan'); ?>" method="post">
+									<input type="text" name="NIK" class="contact_input" placeholder="Nomor KTP" required="required">
+									<input type="text" name="Plat_Mobil" class="contact_input" placeholder="Plat mobil" required="required">
+									<input type="text" name="Nama" class="contact_input" placeholder="Nama lengkap" required="required">
+									<input type="text" name="Alamat" class="contact_input" placeholder="Alamat" required="required">
+									Tanggal Peminjaman : <br>
+									<input type="date" name="Tanggal_Peminjaman">
+									<br>Tanggal Pengembalian : <br>
+									<input type="date" name="Tanggal_Pengembalian">
+									<br>Foto KTP <br>
+	 							    <input type="file" name="Foto_KTP">
+	 							    <br>
+	 							     *Catatan : Untuk pengambilan mobil diwajibkan untuk membawa fotocopy KTP, KK, SIM<br>
+									<button class="contact_button" id="contact_button">Submit</button>
+								</form>
+							</div>
+					</div>
+				</div>
+				<div class="col-lg-3" >
+					<div class="contact_info_list">
+						<div class="contact_info_title">Waktu Buka</div>
+							<ul>
+								<li class="d-flex flex-row align-items-center justify-content-start">
+									<div>Senin-Kamis</div>
+									<div class="ml-auto">8.00 - 19.00</div>
+								</li>
+								<li class="d-flex flex-row align-items-center justify-content-start">
+									<div>Jumat</div>
+									<div class="ml-auto">8.00 - 18.30</div>
+								</li>
+								<li class="d-flex flex-row align-items-center justify-content-start">
+									<div>Sabtu</div>
+									<div class="ml-auto">9.30 - 17.00</div>
+								</li>							
+							</ul>
+							<br>
+							<div class="contact_info_list">
+							<ul>
+								<div class="contact_info_title">Contact Info</div>
+								<li class="d-flex flex-row align-items-center justify-content-start">
+									<div>Alamat</div>
+									<div class="ml-auto">jl.Ryacudu No.14 Way Halim</div>
+								</li>
+								<li class="d-flex flex-row align-items-center justify-content-start">
+									<div>Email</div>
+									<div class="ml-auto">RojoRafih@gmail.com</div>
+								</li>
+								<li class="d-flex flex-row align-items-center justify-content-start">
+									<div>Phone</div>
+									<div class="ml-auto">+6281377779988</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
 		<div class="copyright">
-			&copy; Copyright By : Tugas Besar PABW	
+			&copy; Copyright By : ROJO RAFIH
 		</div>
-	</div>
+	</footer>
+</div>
 </body>
 </html>
